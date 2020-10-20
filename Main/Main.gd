@@ -2,12 +2,14 @@ extends Node
 
 var score = 0
 var map = []
+var score_anterior = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 
 func start_game():
+	print("Score da partida anterior: ", score_anterior)
 	$SnakeHead.speed = $HUD/Speed.get_item_id($HUD/Speed.selected)
 	$SnakeHead.can_move = true
 	$HUD/Speed.disabled = true
@@ -17,6 +19,8 @@ func start_game():
 	$Alimento.visible = true
 
 func gameover():
+	score_anterior = score;
+	print("Score da partida: ", score_anterior)
 	score = 0
 	$SnakeHead.can_move = false
 	$SnakeHead.snake_size = 0

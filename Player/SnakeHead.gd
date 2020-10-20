@@ -116,7 +116,6 @@ func _on_Alimento_eat():
 	get_child(snake_size+1).connect("body_hit", self, "_on_SnakeBody_hit")
 	
 func _on_SnakeBody_hit():
-	print("hited")
 	emit_signal("hit")
 #	for i in range(get_child_count()-2):
 #		get_child(i+2).queue_free()

@@ -23,7 +23,7 @@ __meta__ = {
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="StartPosition" type="Position2D" parent="."]
-[connection signal="eat" from="Alimento" to="SnakeHead" method="_on_Alimento_eat"]
 [connection signal="eat" from="Alimento" to="." method="_on_Alimento_eat"]
+[connection signal="eat" from="Alimento" to="SnakeHead" method="_on_Alimento_eat"]
 [connection signal="hit" from="SnakeHead" to="." method="gameover"]
 [connection signal="start_game" from="HUD" to="." method="start_game"]
